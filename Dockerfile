@@ -10,6 +10,7 @@ FROM alpine:3.19
 
 RUN apk --no-cache add ca-certificates
 
+WORKDIR /root
 COPY --from=builder /app/main .
 RUN adduser -D user
 USER user
@@ -17,5 +18,3 @@ USER user
 EXPOSE 8080
 
 CMD ["./main"]
-
-#cba ubah
